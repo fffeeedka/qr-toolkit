@@ -54,6 +54,7 @@
 - 🔍 **Скан фото** — работает с наклоном, масштабом и перспективой
 - 📁 **Скан папки** — `--all` пройдёт по всем картинкам и выведет содержимое каждой
 - 🟩 **Аннотация** — сохранение превью с обведёнными найденными кодами
+- 🖱 **Интерактивный режим** — меню, без запоминания флагов
 - 🧪 **18 тестов** — цвета, генерация, распознавание, логотипы, SVG
 
 ### 🚀 Быстрый старт
@@ -64,7 +65,7 @@ cd qr-toolkit
 pip install -r requirements.txt
 ```
 
-**Сгенерировать:**
+**Сгенерировать (одной командой):**
 
 ```bash
 python qr.py gen "https://homso.ru"                      # -> qr.png
@@ -82,6 +83,38 @@ python qr.py scan qr.png
 python qr.py scan photo.jpg --draw scan.png              # с превью
 python qr.py scan ./screenshots/                         # вся папка
 ```
+
+
+### 🖱 Интерактивный режим
+
+Запусти **без аргументов** — откроется меню:
+
+```bash
+python qr.py
+```
+
+```
+========================================
+ QR Toolkit - генератор и сканер кодов
+========================================
+
+Что сделать?
+  1) Сгенерировать QR
+  2) Сканировать изображение
+  0) Выход
+```
+
+Дальше программа сама спрашивает всё нужное:
+
+- **Что закодировать** — ссылка/текст, Telegram, Wi-Fi (SSID + пароль), контакт-визитка, email
+- **Уровень коррекции, размер модуля**
+- **Свои цвета** — цвет кода и фона
+- **Логотип** — путь к картинке (уровень коррекции автоматически станет `H`)
+- **SVG или PNG**, имя файла
+- **Проверка** — сразу сканирует результат и показывает, что в нём зашифровано
+
+Для сканирования достаточно указать файл или папку и, по желанию, сохранить превью с контуром.
+Enter везде принимает значение по умолчанию.
 
 ### 📖 Параметры
 
@@ -164,6 +197,7 @@ Everything runs locally: encoding is pure Python math, decoding is OpenCV. No AP
 - 🔍 **Photo scanning** with tilt and perspective
 - 📁 **Folder mode** — decode every image at once
 - 🟩 **Annotated previews**
+- 🖱 **Interactive menu mode**
 - 🧪 **18 unit tests**
 
 ### Quick start
@@ -177,6 +211,17 @@ python qr.py gen "https://homso.ru"
 python qr.py gen "hello" --logo logo.png --ec H
 python qr.py scan photo.jpg --draw scan.png
 ```
+
+
+### Interactive mode
+
+Run with **no arguments** for a menu:
+
+```bash
+python qr.py
+```
+
+Pick generate or scan, then answer the prompts: what to encode (URL, Telegram, Wi-Fi, vCard, email), error-correction level, colors, logo, SVG/PNG, filename. The tool verifies the result by decoding it right away. Press Enter to accept defaults.
 
 ### Options
 
