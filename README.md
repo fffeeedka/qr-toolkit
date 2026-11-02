@@ -60,7 +60,7 @@
 ### 🚀 Быстрый старт
 
 ```bash
-git clone https://github.com/ivandenisenka388-dev/qr-toolkit.git
+git clone https://github.com/fffeeedka/qr-toolkit.git
 cd qr-toolkit
 pip install -r requirements.txt
 ```
@@ -203,7 +203,7 @@ Everything runs locally: encoding is pure Python math, decoding is OpenCV. No AP
 ### Quick start
 
 ```bash
-git clone https://github.com/ivandenisenka388-dev/qr-toolkit.git
+git clone https://github.com/fffeeedka/qr-toolkit.git
 cd qr-toolkit
 pip install -r requirements.txt
 
